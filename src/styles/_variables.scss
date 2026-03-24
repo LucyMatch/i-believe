@@ -1,0 +1,45 @@
+// ─── Typography ───────────────────────────────────────────────
+$font-primary: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+$font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+// ─── Font sizes ───────────────────────────────────────────────
+$size-xs:   0.75rem;   // 12px
+$size-sm:   0.875rem;  // 14px
+$size-base: 1rem;      // 16px
+$size-md:   1.125rem;  // 18px
+$size-lg:   1.5rem;    // 24px
+$size-xl:   2rem;      // 32px
+$size-2xl:  3rem;      // 48px
+$size-3xl:  4.5rem;    // 72px
+
+// ─── Spacing ──────────────────────────────────────────────────
+$space-xs:  0.5rem;
+$space-sm:  1rem;
+$space-md:  2rem;
+$space-lg:  4rem;
+$space-xl:  8rem;
+
+// ─── Colors — base ────────────────────────────────────────────
+$color-black:      #0a0a0a;
+$color-white:      #f5f5f0;
+$color-beige:      #c4a882;
+$color-grey-dark:  #1a1a1a;
+$color-grey-mid:   #444444;
+$color-grey-light: #aaaaaa;
+
+// ─── Cluster accent colors (also defined in clusters.ts data) ──
+$cluster-1: #E8C547;  // Ancient — warm yellow
+$cluster-2: #E8734A;  // Medium — burnt orange
+$cluster-3: #4A90D9;  // Mastery — blue
+$cluster-4: #7B5EA7;  // Sandboxes — purple
+$cluster-5: #E84E5E;  // Invisible — red
+$cluster-6: #3BAF7E;  // Magic — green
+
+// ─── Layout ───────────────────────────────────────────────────
+$max-width:     900px;
+$content-width: 680px;
+
+// ─── Transitions ──────────────────────────────────────────────
+$transition-fast:   150ms ease;
+$transition-base:   300ms ease;
+$transition-slow:   600ms ease;

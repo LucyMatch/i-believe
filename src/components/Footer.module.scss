@@ -1,0 +1,42 @@
+@use '../styles/variables' as *;
+
+.footer {
+  padding: $space-xl 0;
+  border-top: 1px solid rgba(6, 12, 31, 0.15);
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.name {
+  font-size: $size-sm;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(6, 12, 31, 0.55);
+}
+
+.links {
+  display: flex;
+  gap: $space-md;
+  flex-wrap: wrap;
+
+  a {
+    font-size: $size-sm;
+    color: rgba(6, 12, 31, 0.55);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    &:hover {
+      color: #060c1f;
+      opacity: 1;
+    }
+  }
+}
+
+.tagline {
+  font-size: $size-sm;
+  color: rgba(6, 12, 31, 0.45);
+  margin-top: $space-sm;
+}

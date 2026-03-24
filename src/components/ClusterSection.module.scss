@@ -1,0 +1,151 @@
+@use '../styles/variables' as *;
+
+.section {
+  padding: $space-xl 0;
+  padding-top: calc($space-xl * 1.5);
+  padding-bottom: calc($space-xl * 1.5);
+  border-bottom: 1px solid rgba(6, 12, 31, 0.15);
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: var(--accent);
+    opacity: 0.7;
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: $space-sm;
+  margin-bottom: $space-md;
+}
+
+.number {
+  font-size: $size-base;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: $font-mono;
+  letter-spacing: 0.05em;
+}
+
+.handlebar {
+  font-size: $size-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: rgba(6, 12, 31, 0.5);
+}
+
+.belief {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: $space-md;
+  color: #060c1f;
+
+  @media (max-width: 600px) {
+    font-size: $size-xl;
+  }
+}
+
+.ibelieve {
+  color: var(--accent);
+}
+
+.provocation {
+  font-size: $size-xl;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(6, 12, 31, 0.75);
+  margin-bottom: $space-lg;
+  line-height: 1.5;
+  max-width: $content-width;
+  border-left: 3px solid var(--accent);
+  padding-left: $space-sm;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  margin-bottom: $space-xl;
+}
+
+.definition {
+  font-size: $size-lg;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #060c1f;
+}
+
+.practical {
+  font-size: $size-md;
+  font-weight: 600;
+  line-height: 1.7;
+  color: rgba(6, 12, 31, 0.7);
+}
+
+.examples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space-lg;
+  padding-top: $space-lg;
+  border-top: 1px solid rgba(6, 12, 31, 0.15);
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.exampleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.exampleGroupTitle {
+  font-size: $size-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: $space-xs;
+}
+
+.exampleList {
+  display: flex;
+  flex-direction: column;
+  gap: $space-sm;
+}
+
+.exampleItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: $size-base;
+  line-height: 1.6;
+  color: rgba(6, 12, 31, 0.7);
+
+  a {
+    color: rgba(6, 12, 31, 0.7);
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-underline-offset: 4px;
+    &:hover { color: #060c1f; }
+  }
+}
+
+.exampleLabel {
+  font-size: $size-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  font-weight: 700;
+  opacity: 0.75;
+}

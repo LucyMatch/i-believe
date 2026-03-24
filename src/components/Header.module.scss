@@ -1,0 +1,63 @@
+@use '../styles/variables' as *;
+
+.header {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(6, 12, 31, 0.15);
+  padding: $space-xl 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+.byline {
+  font-size: $size-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(6, 12, 31, 0.55);
+}
+
+.name {
+  font-size: $size-3xl;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #060c1f;
+
+  @media (max-width: 600px) {
+    font-size: $size-2xl;
+  }
+}
+
+.title {
+  font-size: $size-md;
+  color: rgba(6, 12, 31, 0.6);
+  font-weight: 400;
+}
+
+.intro {
+  font-size: $size-lg;
+  line-height: 1.5;
+  max-width: 600px;
+  color: rgba(6, 12, 31, 0.8);
+  font-weight: 300;
+}
+
+.portfolioLink {
+  display: inline-block;
+  font-size: $size-sm;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: $space-sm;
+  color: rgba(6, 12, 31, 0.55);
+  text-decoration: none;
+
+  &:hover {
+    color: #060c1f;
+    opacity: 1;
+  }
+}
