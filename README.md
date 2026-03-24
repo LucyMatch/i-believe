@@ -44,12 +44,6 @@ To edit content — edit `clusters.ts`.
 To change design tokens — edit `_variables.scss`.
 To change component layout — edit the relevant `.module.scss` file.
 
-## Cluster 5 title — decide at layout stage
-Three options are noted in `clusters.ts`:
-- "Invisible Is Never Neutral" (current)
-- "Every Invisible Interaction Was A Choice"
-- "We Are What We Design"
-
 ## Deployment
 Deploy to Vercel. Add `i-believe.lucymatch.com` as custom domain.
 Add CNAME record in GoDaddy pointing to `cname.vercel-dns.com`.
