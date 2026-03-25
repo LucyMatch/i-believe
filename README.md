@@ -1,12 +1,11 @@
 # i-believe — Lucy Matchett
 
-Design philosophy microsite. Built with React, TypeScript, SASS, and Framer Motion.
+Design philosophy microsite. Built with React, TypeScript, and SCSS.
 
 ## Stack
 - React 18
-- TypeScript (strict)
-- SASS (CSS modules per component)
-- Framer Motion (scroll-triggered animations)
+- TypeScript
+- SCSS (global stylesheet)
 - Vite
 
 ## Getting started
@@ -21,29 +20,50 @@ npm run dev
 ```
 src/
   data/
-    types.ts        — TypeScript interfaces for cluster data
-    clusters.ts     — All manifesto content, typed and organised by cluster
+    types.ts              — TypeScript interfaces
+    clusters.ts           — All manifesto content, mapped by cluster
+    examples/
+      cluster-1.ts        — Example content per cluster (own work + outside examples)
+      ...
   components/
-    Header.tsx / .module.scss
-    ClusterSection.tsx / .module.scss   — Reusable cluster component
-    Footer.tsx / .module.scss
+    ClusterSection.tsx    — Reusable cluster component
+    ExampleWindow.tsx     — Draggable retro window (desktop)
+    MobileExampleModal.tsx — Full-screen stacked modal (mobile/tablet)
+    BelieveSurprise.tsx   — Per-cluster hover/click surprise interactions
+    GiveMeMore.tsx        — Expandable third paragraph
+    FishDrawing.tsx       — Interactive canvas component (cluster 4)
+    Nav.tsx               — Hamburger + sidebar
+    Header.tsx
+    Footer.tsx
   styles/
-    _variables.scss  — All design tokens (colours, spacing, typography)
-    _reset.scss      — CSS reset
-    main.scss        — Global styles, imports variables and reset
-  App.tsx            — Root — maps clusters data into ClusterSection components
-  main.tsx           — Entry point
+    main.scss             — All global styles
+  App.tsx                 — Root component
+  main.tsx                — Entry point
+public/
+  my-work/                — Local media assets (images, gifs, videos)
 ```
 
 ## Content
 
-All manifesto content lives in `src/data/clusters.ts` as a typed array.
-Each cluster has: id, slug, title, belief, handlebar, provocation, definition, practical, ownWork[], outsideExamples[], color.
+Manifesto copy lives in `src/data/clusters.ts`.
+Example content (media, links, descriptions) lives in `src/data/examples/cluster-N.ts`.
 
-To edit content — edit `clusters.ts`.
-To change design tokens — edit `_variables.scss`.
-To change component layout — edit the relevant `.module.scss` file.
+To update content, edit the relevant cluster file directly.
+
+## Media and repo size
+
+Media assets (images, GIFs, MP4s) are committed directly to this repo under `public/my-work/`. This is intentional for now — it keeps the project self-contained and avoids the need for a CMS or external media host.
+
+**Current repo size: ~138MB.** This is within GitHub's limits and fine for deployment on Vercel/Netlify.
+
+### Future updates
+
+If content needs updating down the line, the options are:
+
+- **Small updates** (swap an image, add a link): edit the relevant `cluster-N.ts` file and commit. Note that git retains old files in history, so the repo will grow over time.
+- **Larger media updates**: start a fresh repo, or move media to an external host (Vimeo for video, Cloudinary/imgix for images) and reference by URL. This would also be the right time to introduce a CMS if content changes become frequent.
+- **CMS**: not needed right now. When/if that changes, Sanity or Contentful would integrate cleanly with this stack.
 
 ## Deployment
 Deploy to Vercel. Add `i-believe.lucymatch.com` as custom domain.
-Add CNAME record in GoDaddy pointing to `cname.vercel-dns.com`.
+Add CNAME record in DNS pointing to `cname.vercel-dns.com`.

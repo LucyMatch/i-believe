@@ -115,6 +115,15 @@ header {
   font-size: 3.5rem;
 }
 
+@keyframes fade-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+#invisible-is-never-neutral .believe-title .title-text {
+  animation: fade-pulse 6s ease-in-out infinite;
+}
+
 .i-believe-trigger {
   cursor: pointer;
   text-decoration: none;
@@ -210,6 +219,72 @@ header {
   .section-left, .section-right {
     max-width: 100%;
   }
+
+  header, section {
+    min-height: unset;
+    padding: 10% 5% 3rem;
+  }
+
+  .section-inner {
+    gap: 2rem;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .section-left {
+    padding-right: 0;
+  }
+
+  .believe-title {
+    font-size: 1.8rem;
+  }
+
+  .header-inner {
+    width: 100%;
+  }
+
+  .give-me-more {
+    position: static;
+  }
+
+  .give-me-more-trigger {
+    position: static;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  .give-me-more-content {
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+  }
+
+  .give-me-more-content.gmm-hidden {
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .give-me-more-content.gmm-visible {
+    max-height: 600px;
+    opacity: 1;
+  }
+
+  hr {
+    display: none;
+  }
+
+  section {
+    border-bottom: 1px solid black;
+  }
+
+  .scroll-hint {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .example-triggers {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 hr {
@@ -218,6 +293,235 @@ hr {
   width: 80vw;
   border: none;
   border-top: 1px solid black;
+}
+
+/* ── Example triggers ── */
+.example-triggers {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.example-trigger {
+  display: inline-block;
+  border: 1px dashed black;
+  padding: 0.4rem 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.example-trigger.is-open {
+  background: black;
+  color: white;
+  border-style: solid;
+}
+
+/* ── Retro windows ── */
+.example-window {
+  position: fixed;
+  width: 300px;
+  border: 2px solid black;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.window-toolbar {
+  background: black;
+  color: white;
+  font-family: monospace;
+  font-size: 0.75rem;
+  padding: 4px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+  gap: 8px;
+}
+
+.window-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.window-close {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  font-size: 0.65rem;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+.window-body {
+  padding: 12px;
+  overflow-y: auto;
+  height: 300px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.window-body-text {
+  text-align: left;
+  margin: 0 0 0.75rem;
+}
+
+.window-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 0.5rem;
+  opacity: 0.6;
+}
+
+.window-link {
+  display: block;
+  font-size: 0.75rem;
+  word-break: break-all;
+  margin-top: 0.5rem;
+}
+
+.window-links {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.window-media {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.window-media-item img {
+  width: 100%;
+  display: block;
+}
+
+.window-media-item figcaption {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-top: 0.25rem;
+}
+
+/* ── Mobile example modal ── */
+.mobile-modal-overlay {
+  display: none;
+
+  @media (max-width: 960px) {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+  }
+}
+
+.mobile-modal {
+  width: 95vw;
+  height: 95dvh;
+  border: 2px solid black;
+  background: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-modal-body {
+  overflow-y: auto;
+  flex: 1;
+  padding: 0;
+}
+
+.mobile-modal-item {
+  padding: 16px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.mobile-modal-title {
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin: 0 0 0.4rem;
+}
+
+.mobile-modal-divider {
+  position: static;
+  width: 100%;
+  border: none;
+  border-top: 1px solid black;
+  margin: 0;
+}
+
+/* ── Fish drawing ── */
+.fish-drawing {
+  margin-top: 0.5rem;
+}
+
+.fish-instruction {
+  font-family: monospace;
+  font-size: 0.8rem;
+  margin: 0 0 0.5rem;
+  text-align: left;
+}
+
+.fish-palette {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.fish-color {
+  width: 18px;
+  height: 18px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+
+  &.active {
+    border-color: black;
+    outline: 1px solid white;
+    outline-offset: -3px;
+  }
+}
+
+.fish-tool {
+  font-family: monospace;
+  font-size: 0.65rem;
+  border: 1px solid black;
+  background: white;
+  padding: 1px 5px;
+  cursor: pointer;
+  height: 18px;
+
+  &.active {
+    background: black;
+    color: white;
+  }
+}
+
+.fish-canvas {
+  display: block;
+  border: 2px solid black;
+  width: 100%;
+  touch-action: none;
 }
 
 /* ── Hamburger ── */
@@ -296,5 +600,12 @@ footer {
 @media (max-width: 600px) {
   .section-inner {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 960px) {
+  .example-triggers {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
