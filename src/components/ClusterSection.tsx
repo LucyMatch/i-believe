@@ -35,7 +35,7 @@ function isMobile() {
 export const ClusterSection = ({ cluster }: ClusterSectionProps) => {
   const [myWorkWindows, setMyWorkWindows]   = useState<WindowData[]>([])
   const [worldWindows,  setWorldWindows]    = useState<WindowData[]>([])
-  const [nextZ, setNextZ] = useState(BASE_Z)
+  const [_nextZ, setNextZ] = useState(BASE_Z)
   const [mobileMyWorkOpen, setMobileMyWorkOpen] = useState(false)
   const [mobileWorldOpen,  setMobileWorldOpen]  = useState(false)
 
@@ -68,7 +68,7 @@ export const ClusterSection = ({ cluster }: ClusterSectionProps) => {
     setter: React.Dispatch<React.SetStateAction<WindowData[]>>,
     current: WindowData[],
     mobileToggle: () => void,
-    mobileOpen: boolean,
+    _mobileOpen: boolean,
   ) => {
     if (isMobile()) {
       mobileToggle()
