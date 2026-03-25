@@ -26,9 +26,6 @@ export const Header = () => {
             </p>
           </div>
         </div>
-        <a href="https://lucymatch.com" target="_blank" rel="noopener noreferrer">
-          lucymatch.com ↗
-        </a>
       </div>
       <div className="scroll-hint" style={{ opacity: visible ? 1 : 0 }}>
         <p>wow content is below the fold</p>
