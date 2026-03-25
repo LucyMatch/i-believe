@@ -288,11 +288,12 @@ header {
 }
 
 hr {
-  position: absolute;
-  bottom: 2rem;
   width: 80vw;
   border: none;
   border-top: 1px solid black;
+  margin-top: auto;
+  margin-bottom: 2rem;
+  flex-shrink: 0;
 }
 
 /* ── Example triggers ── */
