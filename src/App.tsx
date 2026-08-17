@@ -4,6 +4,7 @@ import { Header } from './components/Header'
 import { ClusterSection } from './components/ClusterSection'
 import { Footer } from './components/Footer'
 import { Nav } from './components/Nav'
+import { Analytics } from "@vercel/analytics/next"
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <ClusterSection key={cluster.id} cluster={cluster} />
       ))}
       <Footer />
+      <Analytics />
     </main>
     </>
   )
