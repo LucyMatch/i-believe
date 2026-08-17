@@ -4,7 +4,7 @@ import { Header } from './components/Header'
 import { ClusterSection } from './components/ClusterSection'
 import { Footer } from './components/Footer'
 import { Nav } from './components/Nav'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
   return (
